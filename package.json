@@ -1,6 +1,6 @@
 {
   "name": "@darth777/number_to_words",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "main": "src/number_to_words.js",
   "scripts": {
