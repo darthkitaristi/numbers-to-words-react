@@ -121,6 +121,12 @@
   
     }
 
+    function replaceAll( text, busca, reemplaza ){
+        while (text.toString().indexOf(busca) != -1)
+            text = text.toString().replace(busca,reemplaza);
+        return text;
+    }
+    
     function numberToWords(number){
         
         let vector = convertStringToVector(number);
@@ -181,7 +187,8 @@
                     }
                 }
                 
-                resul = (complete.toString().replace(',',' '))
+                resul = complete.toString();
+                resul = replaceAll(resul,',',' ');
                 break;
             }
         return resul;
@@ -193,7 +200,7 @@
         
             number = number.split('.')
             if (number.length > 1) {
-                return numberToWords(number[0]) + ' con  ' + numberToWords(number[1])   
+                return numberToWords(number[0]) + ' con ' + numberToWords(number[1])   
             }else{
                 return numberToWords(number[0])   
             }
